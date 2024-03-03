@@ -4,6 +4,7 @@ const fs = require('fs');
 const Circle = require('./lib/circle.cjs');
 const Square = require('./lib/square.cjs');
 const Shape = require ('./lib/shapes.cjs');
+const Triangle = require ('./lib/triangle.cjs');
 
 inquirer
     .prompt([
@@ -41,8 +42,10 @@ inquirer
                 shape = new Square(answers.color,answers.logoText,answers.logoTextColor);
                 break;
             case 'Triangle':
-                shape = new Shape(answers.color,answers.logoText,answers.logoTextColor);
+                shape = new Triangle(answers.color,answers.logoText,answers.logoTextColor);
                 break;
+            default:
+                shape = new Shape(answers.color,answers.logoText,answers.logoTextColor);
         }
         // var circle = new Circle(answers.color,answers.logoText,answers.logoTextColor);
         // var square = new Square(answers.color,answers.logoText,answers.logoTextColor);
