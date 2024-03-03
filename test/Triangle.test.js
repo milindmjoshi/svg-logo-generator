@@ -18,4 +18,13 @@ describe('Triangle',()=>{
         expect(triangle.text).toBe('MMJ')
         })
     })
+
+     // Test to verify Triangle renders correctly
+     describe('Render SVG triange', () => {
+        it('Should render svg element for triangle with selected colors', () => {
+            const triangle = new Triangle('orange', 'NET', 'white');
+            expect(triangle.render()).toBe(
+                `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><polygon points="130 20, 270 250, 0 250" fill="orange"/><text x="130" y="140" font-size="38" text-anchor="middle" fill="white">NET</text></svg>`)
+        })
+    })
 })
