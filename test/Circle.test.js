@@ -1,6 +1,7 @@
 const Circle = require('../lib/Circle.cjs');
 
 describe('Circle',()=>{
+    // Test to verify Circle can be instantiated
     describe('Instantiate',()=>{
         it('Verify Circle can be instantiated',()=>{
             const circle = new Circle('blue','STN','white');

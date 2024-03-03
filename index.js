@@ -1,11 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-//const Circle = require('./lib/shapes.cjs');
 const Circle = require('./lib/Circle.cjs');
 const Square = require('./lib/Square.cjs');
 const Shape = require ('./lib/Shape.cjs');
 const Triangle = require ('./lib/Triangle.cjs');
 
+// prompt user for logo attributes using inquirer library
 inquirer
     .prompt([
         {
@@ -24,6 +24,7 @@ inquirer
             type: 'input',
             name: 'logoText',
             message: 'Please enter logo text',
+            // Validate logo text is not more than 3 characters
             validate: (input)=> {
                 if (input.length <= 3){
                     return true;
@@ -42,6 +43,7 @@ inquirer
     .then((answers)=>{
         console.log(answers);
         var shape;
+        // Instantiate correct shape class based on user input for shape
         switch (answers.shape){
             case 'Circle':
                  shape = new Circle(answers.color,answers.logoText,answers.logoTextColor); 
@@ -55,13 +57,7 @@ inquirer
             default:
                 shape = new Shape(answers.color,answers.logoText,answers.logoTextColor);
         }
-        // var circle = new Circle(answers.color,answers.logoText,answers.logoTextColor);
-        // var square = new Square(answers.color,answers.logoText,answers.logoTextColor);
-        //console.log(circle);
-        // fs.writeFile("logo.svg", circle.render(),(err) =>
-        //    err ? console.error(err) : console.log('Generated logo.svg'));
-        // fs.writeFile("logo.svg", square.render(),(err) =>
-        //    err ? console.error(err) : console.log('Generated logo.svg'));
+        // Write logo file to logo.svg
         fs.writeFile("logo.svg", shape.render(),(err) =>
             err ? console.error(err) : console.log('Generated logo.svg'));
     })

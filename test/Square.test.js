@@ -1,6 +1,7 @@
 const Square = require('../lib/Square.cjs');
 
 describe('Square',()=>{
+    // Test to verify Square can be instantiated
     describe('Instantiate',()=>{
         it('Verify Square can be instantiated',()=>{
             const square = new Square('orange','NET','white');

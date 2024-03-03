@@ -1,6 +1,7 @@
 const Shape = require('../lib/Shape.cjs');
 
 describe('Shape',()=>{
+    // Test to verify Shape can be instantiated
     describe('Instantiate',()=>{
         it('Verify Shape can be instantiated',()=>{
             const shape = new Shape('blue','STN','white');

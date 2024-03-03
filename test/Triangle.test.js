@@ -1,6 +1,7 @@
 const Triangle = require('../lib/Triangle.cjs');
 
 describe('Triangle',()=>{
+    // Test to verify Triangle can be instantiated
     describe('Instantiate',()=>{
         it('Verify Triangle can be instantiated',()=>{
             const triangle = new Triangle('orange','MMJ','white');
