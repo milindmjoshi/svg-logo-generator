@@ -1,10 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 //const Circle = require('./lib/shapes.cjs');
-const Circle = require('./lib/circle.cjs');
-const Square = require('./lib/square.cjs');
-const Shape = require ('./lib/shapes.cjs');
-const Triangle = require ('./lib/triangle.cjs');
+const Circle = require('./lib/Circle.cjs');
+const Square = require('./lib/Square.cjs');
+const Shape = require ('./lib/Shape.cjs');
+const Triangle = require ('./lib/Triangle.cjs');
 
 inquirer
     .prompt([
@@ -18,17 +18,25 @@ inquirer
         {
             type: 'input',
             name: 'color',
-            message: 'Please enter logo color',
+            message: 'Please enter logo color or hexidecimal code',
         },
         {
             type: 'input',
             name: 'logoText',
             message: 'Please enter logo text',
+            validate: (input)=> {
+                if (input.length <= 3){
+                    return true;
+                }
+                else {
+                    return "Logo text maximum length is 3 characters"
+                }
+            }
         },
         {
             type: 'input',
             name: 'logoTextColor',
-            message: 'Please enter logo text color',
+            message: 'Please enter logo text color or hexadecimal code',
         }
     ])
     .then((answers)=>{
