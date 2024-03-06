@@ -17,6 +17,9 @@ Generates a SVG Logo file from user inputs
 ## Usage
 "Run node index.js and answer prompts to generate SVG Logo. The generated logo file is logo.svg"
 
+## Video
+https://drive.google.com/file/d/10jal_IcKF8nrZQ1zuBuUMm0jvhB9dmwP/view
+
 ## Installation
 N/A
 
