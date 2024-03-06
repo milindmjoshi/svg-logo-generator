@@ -5,6 +5,7 @@
 ## Table of Contents
 * [Description](#description)
 * [Usage](#usage)
+* [Video](#video)
 * [Installation](#installation)
 * [Tests](#tests)
 * [Contributing](#contributing)
